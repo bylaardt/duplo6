@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, ComCtrls, Buttons, strutils,LCLTranslator;
+  StdCtrls, ComCtrls, Buttons, strutils;
 
 resourcestring
   Female='Female';
@@ -70,11 +70,13 @@ var
   linha:String;
 begin
   {$IFDEF windows}
-     Homefile:=GetUserDir+'caduceu'+DirectorySeparator;
+     Homefile:=GetUserDir+'bylaardt'+DirectorySeparator;
   {$ELSE}
-     Homefile:=GetUserDir+'.caduceu'+DirectorySeparator;
+     Homefile:=GetUserDir+'.bylaardt'+DirectorySeparator;
   {$ENDIF}
   memo1.Lines.Text:= apresentation;
+  combobox1.Items.add(Female);
+  combobox1.Items.add(Male);
   if not DirectoryExistsUTF8(Homefile) then mkdir(Homefile);
   if FileExists(homefile+'duplo6.cfg') then begin
      AssignFile(texto,homefile+'duplo6.cfg');
@@ -82,8 +84,6 @@ begin
      ReadLn(texto,linha);
      edit1.Text:=linha;
      ReadLn(texto,linha);
-     combobox1.Items.add(Female);
-     combobox1.Items.add(Male);
      try
        combobox1.ItemIndex:=strtoint(linha);
      except
@@ -102,6 +102,12 @@ begin
        cor:=7;
      end;
      CloseFile(texto);
+  end else begin
+    som:=true;
+    papeldefundo:=true;
+    cor:=7;
+    combobox1.ItemIndex:=0;
+    Edit1.Text:=GetEnvironmentVariableUTF8('USER');
   end;
 end;
 

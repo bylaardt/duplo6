@@ -56,7 +56,7 @@
         <CompilerOptions>
           <Version Value="11"/>
           <Target>
-            <Filename Value="../Duplo6_x64"/>
+            <Filename Value="../Duplo6_x86_64"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -137,7 +137,7 @@
   <CompilerOptions>
     <Version Value="11"/>
     <Target>
-      <Filename Value="../Duplo6_x64" ApplyConventions="False"/>
+      <Filename Value="../Duplo6.x86_64" ApplyConventions="False"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
