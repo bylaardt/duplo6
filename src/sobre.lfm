@@ -1,23 +1,23 @@
 object Form3: TForm3
   Left = 409
-  Height = 357
+  Height = 353
   Top = 183
-  Width = 625
+  Width = 618
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'About'
-  ClientHeight = 357
-  ClientWidth = 625
+  ClientHeight = 353
+  ClientWidth = 618
+  DesignTimePPI = 95
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.1.0.0'
   object Image1: TImage
     Left = 0
-    Height = 357
+    Height = 353
     Top = 0
-    Width = 625
+    Width = 618
     Align = alClient
     Picture.Data = {
       1754506F727461626C654E6574776F726B477261706869637E9B000089504E47
@@ -1269,7 +1269,7 @@ object Form3: TForm3
     Stretch = True
   end
   object Label1: TLabel
-    Left = 352
+    Left = 348
     Height = 18
     Top = 16
     Width = 54
@@ -1279,7 +1279,7 @@ object Form3: TForm3
     ParentFont = False
   end
   object Image2: TImage
-    Left = 296
+    Left = 293
     Height = 48
     Top = 15
     Width = 48
@@ -1479,10 +1479,10 @@ object Form3: TForm3
     }
   end
   object Label2: TLabel
-    Left = 352
+    Left = 348
     Height = 18
     Top = 32
-    Width = 139
+    Width = 142
     Caption = 'Percy Van Den Bylaardt'
     Font.Color = clNavy
     ParentColor = False
@@ -1490,9 +1490,9 @@ object Form3: TForm3
   end
   object Memo1: TMemo
     Left = 8
-    Height = 221
-    Top = 88
-    Width = 606
+    Height = 218
+    Top = 87
+    Width = 599
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Height = -16
     ParentFont = False
@@ -1502,20 +1502,21 @@ object Form3: TForm3
     WantReturns = False
   end
   object BitBtn1: TBitBtn
-    Left = 516
+    Left = 510
     Height = 38
-    Top = 317
-    Width = 98
+    Top = 313
+    Width = 97
     Anchors = [akRight, akBottom]
     Caption = 'Ok'
     ModalResult = 1
+    ParentFont = False
     TabOrder = 1
   end
   object Label3: TLabel
-    Left = 352
+    Left = 348
     Height = 18
     Top = 48
-    Width = 211
+    Width = 214
     Caption = 'percy.van.den.bylaardt@gmail.com'
     Font.Color = clNavy
     ParentColor = False
@@ -1523,9 +1524,9 @@ object Form3: TForm3
   end
   object Image3: TImage
     Left = 0
-    Height = 104
+    Height = 103
     Top = 0
-    Width = 120
+    Width = 119
     Picture.Data = {
       1754506F727461626C654E6574776F726B477261706869631F50000089504E47
       0D0A1A0A0000000D49484452000000850000008008060000002517AA8F000000
@@ -2173,50 +2174,51 @@ object Form3: TForm3
     Proportional = True
   end
   object Label4: TLabel
-    Left = 128
+    Left = 127
     Height = 18
     Top = 24
-    Width = 118
+    Width = 122
     Caption = 'Balneário Camboriú'
     Font.Color = clNavy
     ParentColor = False
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 128
+    Left = 127
     Height = 18
     Top = 40
-    Width = 87
+    Width = 90
     Caption = 'Santa Catarina'
     Font.Color = clNavy
     ParentColor = False
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 128
+    Left = 127
     Height = 18
-    Top = 56
-    Width = 32
+    Top = 55
+    Width = 34
     Caption = 'Brasil'
     Font.Color = clNavy
     ParentColor = False
     ParentFont = False
   end
   object ComboBox1: TComboBox
-    Left = 245
-    Height = 30
-    Top = 322
-    Width = 100
+    Left = 242
+    Height = 32
+    Top = 316
+    Width = 99
     Anchors = [akLeft, akBottom]
-    ItemHeight = 0
+    ItemHeight = 18
+    ParentFont = False
     Style = csDropDownList
     TabOrder = 2
   end
   object Label7: TLabel
-    Left = 247
+    Left = 244
     Height = 18
-    Top = 306
-    Width = 39
+    Top = 302
+    Width = 41
     Anchors = [akLeft, akBottom]
     Caption = 'Avatar'
     Font.Color = clNavy
@@ -2226,8 +2228,8 @@ object Form3: TForm3
   object Label8: TLabel
     Left = 13
     Height = 18
-    Top = 306
-    Width = 74
+    Top = 302
+    Width = 76
     Anchors = [akLeft, akBottom]
     Caption = 'Player name'
     Font.Color = clNavy
@@ -2236,10 +2238,11 @@ object Form3: TForm3
   end
   object Edit1: TEdit
     Left = 13
-    Height = 24
-    Top = 326
-    Width = 224
+    Height = 32
+    Top = 314
+    Width = 222
     Anchors = [akLeft, akBottom]
+    ParentFont = False
     TabOrder = 3
   end
 end

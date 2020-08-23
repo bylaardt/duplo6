@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectSession>
-    <Version Value="10"/>
+    <Version Value="12"/>
+    <ManyBuildModesSelection Value="Linux_x64,Win32,Win64"/>
     <BuildModes Active="Linux_x64"/>
-    <Units Count="21">
+    <Units Count="24">
       <Unit0>
         <Filename Value="Duplo6.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="52" Y="12"/>
-        <UsageCount Value="192"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="196"/>
       </Unit0>
       <Unit1>
         <Filename Value="tabuleiro.pas"/>
@@ -18,10 +18,12 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <CursorPos Y="2"/>
-        <UsageCount Value="72"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="13"/>
+        <CursorPos X="28" Y="24"/>
+        <UsageCount Value="76"/>
         <Bookmarks Count="1">
-          <Item0 Y="223" ID="9"/>
+          <Item0 Y="224" ID="9"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,8 +35,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="82" Y="16"/>
-        <UsageCount Value="144"/>
+        <TopLine Value="50"/>
+        <CursorPos X="3" Y="60"/>
+        <UsageCount Value="148"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -44,13 +47,10 @@
         <ComponentName Value="Form3"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="72"/>
-        <CursorPos X="47" Y="86"/>
-        <UsageCount Value="91"/>
+        <CursorPos X="19" Y="11"/>
+        <UsageCount Value="95"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="estatistica.pas"/>
@@ -165,125 +165,153 @@
         <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
       </Unit20>
+      <Unit21>
+        <Filename Value="../../../bin/lazarus/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1616"/>
+        <CursorPos X="24" Y="1626"/>
+        <UsageCount Value="10"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="../../../bin/lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="543"/>
+        <CursorPos X="3" Y="548"/>
+        <UsageCount Value="10"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="../../../bin/lazarus/lcl/stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="843"/>
+        <CursorPos X="14" Y="852"/>
+        <UsageCount Value="10"/>
+      </Unit23>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="192" Column="3" TopLine="188"/>
+        <Caret Line="120" Column="23" TopLine="104"/>
       </Position1>
       <Position2>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="230" Column="12" TopLine="215"/>
+        <Caret Line="721" TopLine="718"/>
       </Position2>
       <Position3>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="18"/>
+        <Caret Line="120" Column="23" TopLine="111"/>
       </Position3>
       <Position4>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="230" Column="50" TopLine="211"/>
+        <Caret Line="251" Column="16" TopLine="235"/>
       </Position4>
       <Position5>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="235" Column="34" TopLine="218"/>
+        <Caret Line="721" Column="26" TopLine="703"/>
       </Position5>
       <Position6>
-        <Filename Value="tabuleiro.pas"/>
+        <Filename Value="sobre.pas"/>
+        <Caret Line="25" Column="37" TopLine="10"/>
       </Position6>
       <Position7>
-        <Filename Value="tabuleiro.pas"/>
-        <Caret Line="236" Column="39" TopLine="218"/>
+        <Filename Value="placar_geral.pas"/>
+        <Caret Line="12" Column="20"/>
       </Position7>
       <Position8>
-        <Filename Value="tabuleiro.pas"/>
-        <Caret Line="16" Column="109"/>
+        <Filename Value="placar_geral.pas"/>
+        <Caret Line="24" Column="44" TopLine="13"/>
       </Position8>
       <Position9>
-        <Filename Value="tabuleiro.pas"/>
-        <Caret Line="11" Column="54" TopLine="7"/>
+        <Filename Value="placar_geral.pas"/>
+        <Caret Line="27" Column="25" TopLine="13"/>
       </Position9>
       <Position10>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="224" TopLine="212"/>
+        <Caret Line="140" Column="19" TopLine="126"/>
       </Position10>
       <Position11>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="16" Column="94"/>
       </Position11>
       <Position12>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="14" Column="60"/>
+        <Caret Line="253" Column="41" TopLine="237"/>
       </Position12>
       <Position13>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="678" Column="6" TopLine="659"/>
+        <Caret Line="120" Column="35" TopLine="114"/>
       </Position13>
       <Position14>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="2"/>
+        <Caret Line="725" Column="12" TopLine="720"/>
       </Position14>
       <Position15>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="679" Column="27" TopLine="659"/>
+        <Caret Line="729" Column="49" TopLine="720"/>
       </Position15>
       <Position16>
         <Filename Value="tabuleiro.pas"/>
+        <Caret Line="24" Column="28" TopLine="11"/>
       </Position16>
       <Position17>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="119" Column="15" TopLine="110"/>
+        <Caret Line="186" Column="33" TopLine="170"/>
       </Position17>
       <Position18>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="225" Column="31" TopLine="221"/>
+        <Caret Line="227" Column="30" TopLine="209"/>
       </Position18>
       <Position19>
         <Filename Value="tabuleiro.pas"/>
+        <Caret Line="248" Column="53" TopLine="232"/>
       </Position19>
       <Position20>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="688" Column="20" TopLine="667"/>
+        <Caret Line="269" Column="25" TopLine="252"/>
       </Position20>
       <Position21>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="678" Column="27" TopLine="667"/>
+        <Caret Line="379" Column="85" TopLine="363"/>
       </Position21>
       <Position22>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="72" Column="3" TopLine="67"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="380" Column="45" TopLine="364"/>
       </Position22>
       <Position23>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="80" Column="21" TopLine="67"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="670" Column="27" TopLine="654"/>
       </Position23>
       <Position24>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="107" Column="11" TopLine="92"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="186" TopLine="177"/>
       </Position24>
       <Position25>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="9" Column="41"/>
+        <Filename Value="tabuleiro.pas"/>
       </Position25>
       <Position26>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="84" Column="16" TopLine="64"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="311" Column="3" TopLine="292"/>
       </Position26>
       <Position27>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="107" Column="17" TopLine="89"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="293" Column="37" TopLine="277"/>
       </Position27>
       <Position28>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="22" Column="32" TopLine="11"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="2"/>
       </Position28>
       <Position29>
         <Filename Value="tabuleiro.pas"/>
-        <Caret Line="12" Column="28"/>
+        <Caret Line="29" Column="14" TopLine="12"/>
       </Position29>
       <Position30>
-        <Filename Value="sobre.pas"/>
-        <Caret Line="85" Column="65" TopLine="71"/>
+        <Filename Value="tabuleiro.pas"/>
+        <Caret Line="248" Column="53" TopLine="232"/>
       </Position30>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>

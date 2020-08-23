@@ -21,7 +21,7 @@ resourcestring
   tr_connect = 'click at the end';
   tr_names ='Diana;Apolo;Hermes';
 const
-  tamanho_da_peca = 60;  //padrão = 60    max=78
+  tamanho_da_peca:byte = 72;  //padrão = 60    max=78
   bolas = 64;            //padrão = 64
   pecas = 256;
   distanciax = 22;
@@ -29,8 +29,8 @@ const
   margem = 4;
   transparencia = clGreen;
   TimeInterval = 5;      //10
-  TimeSpace_H = 15;      //30
-  TimeSpace_V = 10;      //20
+  TimeSpace_H = 35;      //30
+  TimeSpace_V = 30;      //20
   sleeptime = 180;       //180
 type
 
@@ -137,6 +137,7 @@ type
     { private declarations }
     TodasAsPecas:array [0..27] of TDomino;
     Estatistica: array[1..4] of Tjogador;
+    pedra_inicial:Tdomino;
   public
     { public declarations }
   end;
@@ -198,7 +199,7 @@ begin
        if TodasAsPecas[x].Mostrar then begin
          TodasAsPecas[x].CriaImagem;
        end;
-    form1.Repaint;
+    form1.Invalidate;
     Screen.Cursor:=crDefault;
   end;
 end;
@@ -212,7 +213,7 @@ procedure TForm1.PanoClick(Sender: TObject);
 begin
   pano.checked:=not pano.checked;
   sobre.Form3.papeldefundo:=pano.checked;
-  repaint;
+  Invalidate;
 end;
 
 { TForm1 }
@@ -220,7 +221,6 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   loop:integer;
 begin
-
   GroupBox1.Caption:=tr_Score;
   GroupBox2.Caption:=tr_round;
   label1.caption:=tr_connect;
@@ -243,12 +243,14 @@ begin
   mesa.placar_ultimo:=0;
   mesa.soma_meu:=0;
   mesa.soma_teu:=0;
-  stretchme:=trunc(min(ClientWidth / 1920, ClientHeight / 1080)* tamanho_da_peca);
+  stretchme:=trunc(min(screen.Width / 1920, screen.Height / 1080)* tamanho_da_peca);
   Form2:=Tform2.Create(self);
   Label1.BorderSpacing.Bottom:=margem*2+stretchme*2;
   pano.checked:=Form3.papeldefundo;
   MenuItem5.Checked:=Form3.som;
   Modo_cor:=form3.cor;
+  //do formshow
+  pedra_inicial:=TodasAsPecas[NovoJogo];
 end;
 
 Function TForm1.NovoJogo:ShortInt;
@@ -292,31 +294,31 @@ begin
   ioponente.height:=ioponente.Width;  iparceiro.height:=ioponente.height; iadversario.height:=ioponente.height; ieu.height:=ioponente.height;
 
   iparceiro.top:=margem;
-  AlturaMaxima:=ClientHeight-margem;
-  ieu.top:=AlturaMaxima-ieu.Height-margem;
-  ioponente.top:=(AlturaMaxima-(stretchme+margem)*7) div 2 -((stretchme+margem))*2-label5.Height-2;
+  AlturaMaxima:=screen.Height-margem;
+  ieu.top:=AlturaMaxima-ieu.canvas.textheight(ieu.Caption)-margem-stretchme*2;
+  ioponente.top:=(AlturaMaxima-(stretchme+margem)*7) div 2 -(stretchme+margem)*2-label5.canvas.textheight(label5.Caption)-2;
   Iadversario.top:=ioponente.top;
 
-  iparceiro.left:=(ClientWidth-(stretchme+margem)*7) div 2 -((stretchme+margem))*2;
-  ieu.left:=(ClientWidth-(stretchme+margem)*7) div 2 +((stretchme+margem))*7;
+  iparceiro.left:=(screen.Width-(stretchme+margem)*7) div 2 -((stretchme+margem))*2;
+  ieu.left:=(screen.Width-(stretchme+margem)*7) div 2 +((stretchme+margem))*7;
   ioponente.left:=margem;
-  Iadversario.left:=ClientWidth-Iadversario.Width-margem;
+  Iadversario.left:=screen.Width-Iadversario.Width-margem;
 
-  ioponente1.left:=ioponente.left;     iparceiro1.left:=iparceiro.left ; iadversario1.left:=iadversario.left;    ieu1.left:=ieu.left;
-  ioponente1.top:=ioponente.top;       iparceiro1.top:=iparceiro.top ; iadversario1.top:=iadversario.top;    ieu1.top:=ieu.top;
-  ioponente1.width:=ioponente.width;   iparceiro1.width:=iparceiro.width ; iadversario1.width:=iadversario.width;    ieu1.width:=ieu.width;
-  ioponente1.height:=ioponente.height; iparceiro1.height:=iparceiro.height ; iadversario1.height:=iadversario.height;    ieu1.height:=ieu.height;
+  ioponente1.left  :=ioponente.left;   iparceiro1.left  :=iparceiro.left;   iadversario1.left  :=iadversario.left;   ieu1.left  :=ieu.left;
+  ioponente1.top   :=ioponente.top;    iparceiro1.top   :=iparceiro.top;    iadversario1.top   :=iadversario.top;    ieu1.top   :=ieu.top;
+  ioponente1.width :=ioponente.width;  iparceiro1.width :=iparceiro.width;  iadversario1.width :=iadversario.width;  ieu1.width :=ieu.width;
+  ioponente1.height:=ioponente.height; iparceiro1.height:=iparceiro.height; iadversario1.height:=iadversario.height; ieu1.height:=ieu.height;
   IEu2.Top:=IEu.top;IEu2.left:=IEu.left;IEu2.Width:=IEu.Width;IEu2.Height:=IEu.Height;
   IEu3.Top:=IEu.top;IEu3.left:=IEu.left;IEu3.Width:=IEu.Width;IEu3.Height:=IEu.Height;
 
-  Label2.top:=ieu.Top-label2.Height-2;
+  Label2.top:=ieu.Top-label2.canvas.TextHeight(label2.caption)-2;
   label3.top:=Iadversario.top+Iadversario.Height+2;
   label4.top:=Iparceiro.top+Iparceiro.Height+2;
   label5.top:=Ioponente.top+Ioponente.Height+2;
-  label2.left:=ieu.left+(ieu.Width-label2.Width) div 2;
-  label3.left:=Iadversario.left+(ieu.Width-label3.Width) div 2;
-  label4.left:=Iparceiro.left+(ieu.Width-label4.Width) div 2;
-  label5.left:=Ioponente.left+(ieu.Width-label5.Width) div 2;
+  label2.left:=ieu.left+(ieu.Width-label2.canvas.TextWidth(label2.caption)) div 2;
+  label3.left:=Iadversario.left+(ieu.Width-label3.canvas.TextWidth(label3.caption)) div 2;
+  label4.left:=Iparceiro.left+(ieu.Width-label4.canvas.TextWidth(label4.caption)) div 2;
+  label5.left:=Ioponente.left+(ieu.Width-label5.canvas.TextWidth(label5.caption)) div 2;
   for x:=27 downto 0 do begin
     y:=Random(x+1)+1;
     naotinha:=TodasAsPecas[x] = nil;
@@ -332,9 +334,9 @@ begin
     posY:=ifthen(TodasAsPecas[x].dono=1,   AlturaMaxima- stretchme*2 - margem,
           ifthen(TodasAsPecas[x].dono=3,   margem,
                                           (AlturaMaxima-(stretchme+margem)*7) div 2 +(stretchme+margem)*(x mod 7)));
-    PosX:=ifthen(TodasAsPecas[x].dono=2,   ClientWidth - stretchme*2 - margem,
+    PosX:=ifthen(TodasAsPecas[x].dono=2,   screen.Width - stretchme*2 - margem,
           ifthen(TodasAsPecas[x].dono=4,   margem,
-                                          (ClientWidth-(stretchme+margem)*7) div 2 +(stretchme+margem)*(x mod 7)));
+                                          (screen.Width-(stretchme+margem)*7) div 2 +(stretchme+margem)*(x mod 7)));
     TodasAsPecas[x].top:=PosY;
     TodasAsPecas[x].left:=PosX;
     TodasAsPecas[x].mostrar:=TodasAsPecas[x].dono=1;
@@ -447,7 +449,7 @@ begin
   destino.x:=X;
   Destino.y:=Y;
   margemideal:=stretchme*5 div 2+margem*2;
-  if destino.y>(form1.ClientHeight- margemideal) then begin
+  if destino.y>(screen.Height- margemideal) then begin
     form1.AcresceMesa(-stretchme div 2);
     Destino.y:=Destino.y-stretchme div 2;
   end;
@@ -555,7 +557,7 @@ var
     begin
       result:=dire;
       case dire of
-          1: procede:=Pedr.Destino.X+Pedr.Width+ ifthen(PedraAtual.Valor.x=PedraAtual.Valor.y,7,9)*stretchme div 2+margem*3>ClientWidth;
+          1: procede:=Pedr.Destino.X+Pedr.Width+ ifthen(PedraAtual.Valor.x=PedraAtual.Valor.y,7,9)*stretchme div 2+margem*3>screen.Width;
           3: procede:=Pedr.Destino.X < ifthen(PedraAtual.Valor.x=PedraAtual.Valor.y,7,9)*stretchme div 2+margem*3;
       else
         procede:=not (PedraAtual.Valor.x=PedraAtual.valor.Y);
@@ -563,7 +565,7 @@ var
       if procede then begin
         case dire of
           1,3: dire:=ifthen(pedraanterior.Indice=mesa.PedraDireita.indice,2,4);
-          2,4: dire:=ifthen(pedr.Destino.x<(ClientWidth div 2),1,3);
+          2,4: dire:=ifthen(pedr.Destino.x<(screen.Width div 2),1,3);
         end;
       end;
       direcao:=dire;
@@ -586,11 +588,11 @@ var
 begin
   try
     PedraAtual.BringToFront;
-  PedraAtual.Mostrar:=true;
+    PedraAtual.Mostrar:=true;
   If PedraAnterior=Nil then begin
      PedraAtual.Vertical:=PedraAtual.valor.X=PedraAtual.Valor.Y;
      PedraAtual.CriaImagem;
-     PedraAtual.setdestino((ClientWidth-Pedraatual.Width) div 2,(ClientHeight-Pedraatual.Height) div 2);
+     PedraAtual.setdestino((screen.Width-Pedraatual.Width) div 2,(screen.Height-Pedraatual.Height) div 2);
      Mesa.DirecDireita:=1;
      Mesa.DirecEsquerda:=3;
      mesa.PedraDireita:=PedraAtual;
@@ -701,8 +703,8 @@ var
   x,y:integer;
 begin
  if pano.checked then begin
-   for x:=0 to (ClientWidth-1) div 256 +1 do
-       for y:=0 to (ClientHeight-1) div 256 +1 do
+   for x:=0 to (screen.Width-1) div 256 +1 do
+       for y:=0 to (screen.Height-1) div 256 +1 do
           canvas.Draw(x*256,y*256,image1.Picture.PNG);
  end;
 end;
@@ -718,7 +720,9 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  poepedra(nil,TodasAsPecas[NovoJogo]);
+  sleep(100);
+  PoePedra(nil,pedra_inicial);
+  Form1.OnShow:=nil;
 end;
 
 procedure TForm1.MenuItem4Click(Sender: TObject);
@@ -925,7 +929,7 @@ var
       mesa.placar_ultimo:=ifthen(mesa.vencedor in [1,3],pontos_teu,-pontos_meu);
     end;
 begin
-  if passou then begin
+  if (pedra=nil) and passou then begin
     Estatistica[jogador].Naipes[mesa.NaipeDireita].Passou:=true;
     Estatistica[jogador].Naipes[mesa.Naipeesquerda].Passou:=true;
     MostraJogadores;

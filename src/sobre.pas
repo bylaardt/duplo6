@@ -40,7 +40,6 @@ type
     TreeView1: TTreeView;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure TreeView1Change(Sender: TObject; Node: TTreeNode);
   private
     { private declarations }
@@ -77,7 +76,7 @@ begin
   memo1.Lines.Text:= apresentation;
   combobox1.Items.add(Female);
   combobox1.Items.add(Male);
-  if not DirectoryExistsUTF8(Homefile) then mkdir(Homefile);
+  if not DirectoryExists(Homefile) then mkdir(Homefile);
   if FileExists(homefile+'duplo6.cfg') then begin
      AssignFile(texto,homefile+'duplo6.cfg');
      Reset(texto);
@@ -107,7 +106,7 @@ begin
     papeldefundo:=true;
     cor:=7;
     combobox1.ItemIndex:=0;
-    Edit1.Text:=GetEnvironmentVariableUTF8('USER');
+    Edit1.Text:=GetEnvironmentVariable('USER');
   end;
 end;
 
@@ -125,9 +124,6 @@ begin
   closefile(texto);
 end;
 
-procedure TForm3.FormShow(Sender: TObject);
-begin
-end;
 
 
 end.

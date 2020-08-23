@@ -1,54 +1,58 @@
 object Form2: TForm2
   Left = 591
-  Height = 477
-  Top = 197
-  Width = 316
+  Height = 587
+  Top = 27
+  Width = 335
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'Score'
-  ClientHeight = 477
-  ClientWidth = 316
+  ClientHeight = 587
+  ClientWidth = 335
   Color = clGreen
+  DesignTimePPI = 84
   Font.Color = clBlack
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.1.0.0'
   object Panel1: TPanel
     Left = 0
-    Height = 477
+    Height = 587
     Top = 0
-    Width = 316
+    Width = 335
     Align = alClient
     BevelInner = bvLowered
     BevelWidth = 5
-    ClientHeight = 477
-    ClientWidth = 316
+    ClientHeight = 587
+    ClientWidth = 335
+    Font.Color = clBlack
+    ParentFont = False
     TabOrder = 0
     object Label1: TLabel
-      Left = 22
-      Height = 28
-      Top = 22
-      Width = 272
+      Left = 20
+      Height = 26
+      Top = 20
+      Width = 295
       Align = alTop
       Alignment = taCenter
-      BorderSpacing.Around = 12
+      BorderSpacing.Around = 10
       Caption = 'Label1'
       Font.Color = clYellow
-      Font.Height = -21
+      Font.Height = -18
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
     end
     object StringGrid1: TStringGrid
-      Left = 22
-      Height = 363
-      Top = 62
-      Width = 272
+      Left = 20
+      Height = 485
+      Top = 56
+      Width = 295
       Align = alClient
+      AlternateColor = 42496
       AutoEdit = False
       AutoFillColumns = True
-      BorderSpacing.Bottom = 30
-      BorderSpacing.Around = 12
+      BorderSpacing.Bottom = 26
+      BorderSpacing.Around = 10
       ColCount = 4
       Columns = <      
         item
@@ -56,53 +60,64 @@ object Form2: TForm2
           MaxSize = 1
           SizePriority = 0
           Title.Caption = ' '
-          Width = 40
+          Width = 35
         end      
         item
+          MinSize = 9
+          MaxSize = 175
           ReadOnly = True
           Title.Caption = '   Jogador'
-          Width = 113
+          Width = 158
         end      
         item
           Alignment = taRightJustify
-          MaxSize = 10
+          MinSize = 9
+          MaxSize = 9
           ReadOnly = True
           SizePriority = 0
           Title.Alignment = taRightJustify
           Title.Caption = 'Nós   '
-          Width = 57
+          Width = 50
         end      
         item
           Alignment = taRightJustify
-          MaxSize = 10
+          MinSize = 9
+          MaxSize = 9
           ReadOnly = True
           SizePriority = 0
           Title.Alignment = taRightJustify
           Title.Caption = 'Eles   '
-          Width = 58
+          Width = 51
         end>
+      FixedColor = clLime
       FixedCols = 0
+      Flat = True
+      Font.Color = clYellow
       Options = [goFixedHorzLine, goVertLine, goRowSelect, goSmoothScroll]
+      Options2 = [goScrollToLastRow]
       ParentColor = True
+      ParentFont = False
       RowCount = 2
       TabOrder = 0
       TitleFont.Color = clBlack
       OnDrawCell = StringGrid1DrawCell
       ColWidths = (
-        40
-        113
-        57
-        58
+        35
+        158
+        50
+        51
       )
     end
     object BitBtn1: TBitBtn
-      Left = 127
-      Height = 30
-      Top = 434
-      Width = 75
+      Left = 137
+      Height = 26
+      Top = 550
+      Width = 66
       Anchors = [akBottom]
       Caption = 'Ok'
+      Font.Color = clBtnText
       OnClick = BitBtn1Click
+      ParentFont = False
       TabOrder = 1
     end
   end
